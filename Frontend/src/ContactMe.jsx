@@ -35,7 +35,7 @@ export default function Contact(){
         const data = {firstname , lastname ,email ,  subject , message }
         try{
             setloading(prev => !prev);
-            const response = await axios.post('http://localhost:3000/api/sendmail', data);
+            const response = await axios.post('https://contact-page-0b9c.onrender.com/api/sendmail', data);
             console.log("Server Response :" , response.data.message);
             setloading(prev => !prev);
             toast.success("Thank You ! Mail Received Successfully");
