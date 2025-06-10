@@ -37,14 +37,16 @@ export default function Contact(){
         try{
             setloading(prev => !prev);
             let response = await axios.post('https://contact-page-0b9c.onrender.com/api/sendmail', data);
-            console.log("Server Response :" , response.data.message);
-            setloading(prev => !prev);
-            toast.success("Thank You ! Mail Received Successfully");
-        }
-        catch(error) {
-                console.error('Error message :', error );
+            if(response){
+                console.log("Server Response :" , response.data.message);
                 setloading(prev => !prev);
-                toast.error(error.response.data.message || "Something went wrong !");
+                toast.success("Thank You ! Mail Received Successfully");
+            }
+        }
+        catch(err) {
+                console.error('Error message :', err );
+                alert(err.response.data);
+                setloading(prev => !prev);
         }   
     }
     return (
