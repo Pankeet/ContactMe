@@ -36,16 +36,22 @@ export default function Contact(){
         const data = {firstname , lastname ,email ,  subject , message }
         try{
             setloading(prev => !prev);
-            let response = await axios.post('https://contact-page-0b9c.onrender.com/api/sendmail', data);
-            if(response){
-                console.log("Server Response :" , response.data.message);
+            if(data.firstname === '' || data.lastname === '' || data.email === '' || data.message === ''){
                 setloading(prev => !prev);
-                toast.success("Thank You ! Mail Received Successfully");
+                toast.error("Please Fill the details before sending Mail !");
+            }
+            else{
+                let response = await axios.post('https://contact-page-0b9c.onrender.com/api/sendmail', data);
+                if(response){
+                    console.log("Server Response :" , response.data.message);
+                    setloading(prev => !prev);
+                    toast.success("Thank You ! Mail Received Successfully");
+                }
             }
         }
         catch(err) {
                 console.error('Error message :', err );
-                alert(err.response.data);
+                toast.error(err.response.data.message);
                 setloading(prev => !prev);
         }   
     }
