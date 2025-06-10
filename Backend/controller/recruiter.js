@@ -8,6 +8,12 @@ const RecruitRouter = express.Router();
 RecruitRouter.post('/sendmail' , async (req , res) => {
     const { firstname , lastname , email , subject , message} = req.body;
 
+    if(firstname || lastname || email || message === ''){
+        return res.status(400).json({
+            messgage : "Please Fill the details first"
+        })
+    }
+
     const findRecruiter = await recruiter.findOne({email});
     if(!findRecruiter){
         await recruiter.create({
