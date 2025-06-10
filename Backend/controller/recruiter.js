@@ -26,7 +26,7 @@ RecruitRouter.post('/sendmail' , async (req , res) => {
     const mailOptions = {
         from : process.env.USER,
         to : process.env.ME,
-        subject : email + ' ' + subject,
+        subject : email + '  ' + subject,
         text : message
     };
 

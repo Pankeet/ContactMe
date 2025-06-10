@@ -2,7 +2,9 @@ import { useRef, useState } from 'react';
 import axios from 'axios';
 import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { response } from 'express';
 export default function Contact(){
+
     const [focusoninp , setfocus ] = useState(false);
     const [loading , setloading ] = useState(false);
     const formRef = useRef(null);
@@ -35,7 +37,7 @@ export default function Contact(){
         const data = {firstname , lastname ,email ,  subject , message }
         try{
             setloading(prev => !prev);
-            const response = await axios.post('https://contact-page-0b9c.onrender.com/api/sendmail', data);
+            let response = await axios.post('https://contact-page-0b9c.onrender.com/api/sendmail', data);
             console.log("Server Response :" , response.data.message);
             setloading(prev => !prev);
             toast.success("Thank You ! Mail Received Successfully");
@@ -43,7 +45,7 @@ export default function Contact(){
         catch(error) {
                 console.error('Error message :', error );
                 setloading(prev => !prev);
-                toast.error("OOps ! Something Went Wrong ");
+                toast.error("Oops! Something went wrong");
         }   
     }
     return (
@@ -62,10 +64,10 @@ export default function Contact(){
                 <span className="text-xl cursor-pointer" onClick={() => CopyText('9875142251', true)}>+91 9875142251</span>
                 </span>
                 <span className="pl-[23rem] pt-4 text-xl">First name* <br />
-                <input required type="text" ref={formRef} className={`pt-1 outline-none ${ focusoninp ? 'border-2 border-red-500 rounded-md': 'border-gray-600 border-b'}`}></input>
+                <input type="text" ref={formRef} className={`pt-1 outline-none ${ focusoninp ? 'border-2 border-red-500 rounded-md': 'border-gray-600 border-b'}`}></input>
                 </span>
                 <span className="pl-48 pt-3.5 text-xl">Last name* <br />
-                <input required type="text" ref={lname} className="border-gray-600 border-b-1 pt-1 outline-none"></input>
+                <input type="text" ref={lname} className="border-gray-600 border-b-1 pt-1 outline-none"></input>
                 </span>
             </div>
             <div className="flex pt-10 pl-10">
@@ -73,16 +75,16 @@ export default function Contact(){
                 <span className="text-xl cursor-pointer" onClick={() => CopyText('pankeet04@gmail.com' , false)}>pankeet04@gmail.com</span>
                 </span>
                 <span className='pl-[307px] pt-4 text-xl'>Email* <br />
-                <input required type="email" ref={user} className="border-gray-600 border-b-1 pt-1 outline-none"></input>
+                <input type="email" ref={user} className="border-gray-600 border-b-1 pt-1 outline-none"></input>
                 </span>
                 <span className='pl-48 pt-3.5 text-xl'>Subject* <br />
-                <input required type="text" ref={sub} className="border-gray-600 overflow-none border-b-1 pt-1 outline-none w-2xs"></input>
+                <input type="text" ref={sub} className="border-gray-600 overflow-none border-b-1 pt-1 outline-none w-2xs"></input>
                 </span>
             </div>
             <div className="flex pt-10 pl-10">
                 <span className="text-2xl">Location <br /> <span className="text-xl">Vadodara, Gujarat, India</span></span>
                 <span className="pl-[290px] pt-4 text-xl">Message* <br />
-                <input required type="text" ref={msg} className="border-gray-600 border-b-1 pt-1 outline-none w-2xl"></input>
+                <input type="text" ref={msg} className="border-gray-600 border-b-1 pt-1 outline-none w-2xl"></input>
                 </span>
             </div>
 
