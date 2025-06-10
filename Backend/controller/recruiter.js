@@ -8,9 +8,9 @@ const RecruitRouter = express.Router();
 RecruitRouter.post('/sendmail' , async (req , res) => {
     const { firstname , lastname , email , subject , message} = req.body;
 
-    if(firstname || lastname || email || message === ''){
+    if(firstname === '' || lastname === "" || email === "" || message === ''){
         return res.status(400).json({
-            messgage : "Please Fill the details first"
+            message : "Please Fill the details first"
         })
     }
 
