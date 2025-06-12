@@ -70,10 +70,10 @@ export default function Contact(){
                 <span className="text-2xl">Phone <br />
                 <span className="text-xl cursor-pointer" onClick={() => CopyText('9875142251', true)}>+91 9875142251</span>
                 </span>
-                <span className="pl-[23rem] pt-4 text-xl">First name* <br />
+                <span className="pl-[23rem] pt-4 text-xl">First name<span className='text-red-900'>*</span> <br />
                 <input type="text" ref={formRef} className={`pt-1 outline-none ${ focusoninp ? 'border-2 border-red-500 rounded-md': 'border-gray-600 border-b'}`}></input>
                 </span>
-                <span className="pl-48 pt-3.5 text-xl">Last name* <br />
+                <span className="pl-48 pt-3.5 text-xl">Last name<span className='text-red-900'>*</span> <br />
                 <input type="text" ref={lname} className="border-gray-600 border-b-1 pt-1 outline-none"></input>
                 </span>
             </div>
@@ -81,16 +81,16 @@ export default function Contact(){
             <span className="text-2xl">Email <br />
                 <span className="text-xl cursor-pointer" onClick={() => CopyText('pankeet04@gmail.com' , false)}>pankeet04@gmail.com</span>
                 </span>
-                <span className='pl-[307px] pt-4 text-xl'>Email* <br />
+                <span className='pl-[307px] pt-4 text-xl'>Email<span className='text-red-900'>*</span> <br />
                 <input type="email" ref={user} className="border-gray-600 border-b-1 pt-1 outline-none"></input>
                 </span>
-                <span className='pl-48 pt-3.5 text-xl'>Subject* <br />
+                <span className='pl-48 pt-3.5 text-xl'>Subject<span className='text-red-900'>*</span> <br />
                 <input type="text" ref={sub} className="border-gray-600 overflow-none border-b-1 pt-1 outline-none w-2xs"></input>
                 </span>
             </div>
             <div className="flex pt-10 pl-10">
                 <span className="text-2xl">Location <br /> <span className="text-xl">Vadodara, Gujarat, India</span></span>
-                <span className="pl-[290px] pt-4 text-xl">Message* <br />
+                <span className="pl-[290px] pt-4 text-xl">Message<span className='text-red-900'>*</span> <br />
                 <input type="text" ref={msg} className="border-gray-600 border-b-1 pt-1 outline-none w-2xl"></input>
                 </span>
             </div>
