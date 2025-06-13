@@ -67,40 +67,40 @@ export default function Contact(){
             <div className="pt-10 sm:pl-10 pl-3 sm:flex">
                 <div className="sm:text-2xl md:text-3xl md:font-medium lg:text-5xl">Helpful <br />Information</div>
                 <div className="sm:text-2xl md:text-3xl md:font-medium lg:text-5xl sm:pl-24 lg:pl-52 pt-1">General <br />Inquiries</div>
-                <div className="sm:text-md lg:pl-44 sm:pt-3 lg:pt-10 pt-1"> For general inquiries please , I request you to <i><u className="cursor-pointer flex" onClick={fillform}> fill out this form to reach me</u> </i>
+                <div className="sm:text-md lg:pl-44 sm:pt-3 lg:pt-10 pt-1 sm:pl-24"> For general inquiries please , I request you to <i><u className="cursor-pointer flex" onClick={fillform}> fill out this form to reach me</u> </i>
                 </div> 
             </div>
-            <div className="sm:flex pl-3 sm:pt-20 pt-4 sm:pl-10 ">
+            <div className="lg:flex pl-3 lg:pt-20 sm:pt-10 pt-6 sm:pl-10 ">
                 <span className="sm:text-lg md:text-xl lg:text-2xl ">Phone <br />
                 <span className="sm:text-md md:text-lg lg:text-xl cursor-pointer" onClick={() => CopyText('9875142251', true)}>+91 9875142251</span>
                 </span>
-                <span className="lg:pl-[21rem] pt-4 md:text-xl text-lg flex sm:block">First name<span className='text-red-900'>*</span> <br />
-                <input type="text" ref={formRef} className={`pt-1 outline-none sm:w-20 lg:w-56 ${ focusoninp ? 'border-2 border-red-500 rounded-md': 'border-gray-600 border-b'}`}></input>
+                <span className="lg:pl-[21rem] pt-4 lg:text-xl text-lg flex sm:block">First name<span className='text-red-900'>*</span> <br />
+                <input type="text" ref={formRef} className={`w-48 pt-1 outline-none sm:w-48 lg:w-56 ${ focusoninp ? 'border-2 border-red-500 rounded-md': 'border-gray-600 border-b'}`}></input>
                 </span>
-                <span className="sm:pl-3 lg:pl-36 pt-3.5 md:text-xl text-lg flex lg:block">Last name<span className='text-red-900'>*</span> <br />
-                <input type="text" ref={lname} className="border-gray-600 border-b-1 pt-1 outline-none lg:w-56"></input>
+                <span className="lg:pl-36 pt-4 text-lg lg:text-xl flex sm:block">Last name<span className='text-red-900'>*</span> <br />
+                <input type="text" ref={lname} className="border-gray-600 border-b-1 pt-1 outline-none w-48 lg:w-56"></input>
                 </span>
             </div>
-            <div className="sm:flex pt-10 sm:pl-10 pl-3">
+            <div className="lg:flex pt-10 sm:pl-10 pl-3">
             <span className="sm:text-lg md:text-xl lg:text-2xl">Email <br />
                 <span className="sm:text-md md:text-lg lg:text-xl cursor-pointer" onClick={() => CopyText('pankeet04@gmail.com' , false)}>pankeet04@gmail.com</span>
                 </span>
-                <span className='sm:pl-[275px] pt-4 md:text-xl text-lg flex sm:block'>Email<span className='text-red-900'>*</span> <br />
+                <span className='lg:pl-[276px] pt-4 md:text-xl text-lg flex sm:block'>Email<span className='text-red-900'>*</span> <br />
                 <input type="email" ref={user} className="border-gray-600 border-b-1 pt-1 outline-none"></input>
                 </span>
-                <span className='sm:pl-36 pt-3.5 md:text-xl text-lg flex sm:block'>Subject<span className='text-red-900'>*</span> <br />
+                <span className='lg:pl-[153px] pt-3.5 md:text-xl text-lg flex sm:block'>Subject<span className='text-red-900'>*</span> <br />
                 <input type="text" ref={sub} className="border-gray-600 overflow-none border-b-1 pt-1 outline-none lg:w-2xs w-3xs"></input>
                 </span>
             </div>
-            <div className="sm:flex pt-10 sm:pl-10 pl-3">
+            <div className="lg:flex pt-10 sm:pl-10 pl-3">
                 <span className="sm:text-lg md:text-xl lg:text-2xl">Location <br /> <span className="md:text-xl text-md">Vadodara, Gujarat, India</span></span>
-                <span className="sm:pl-64 pt-4 md:text-xl text-lg flex sm:block">Message<span className='text-red-900'>*</span> <br />
+                <span className="lg:pl-64 pt-4 md:text-xl text-lg flex sm:block">Message<span className='text-red-900'>*</span> <br />
                 <input type="text" ref={msg} className="border-gray-600 border-b-1 pt-1 outline-none lg:w-2xl w-80"></input>
                 </span>
             </div>
 
             <div>
-                <button type="submit" disabled={loading || coolingtime} onClick={sendMail} className={`${loading || coolingtime ? 'cursor-not-allowed' : 'cursor-pointer'} sm:ml-[50rem] mt-10 ml-36 px-6 py-2 mb-3 bg-black text-white text-lg rounded hover:bg-white transition-colors duration-300 hover:text-black `}>{loading ? "Sending Mail..." : "Send Mail"}</button>
+                <button type="submit" disabled={loading || coolingtime} onClick={sendMail} className={`${loading || coolingtime ? 'cursor-not-allowed' : 'cursor-pointer'} lg:ml-[50rem] mt-10 ml-36 px-6 py-2 mb-3 bg-black text-white text-lg rounded hover:bg-white transition-colors duration-300 hover:text-black `}>{loading ? "Sending Mail..." : "Send Mail"}</button>
             </div>
            
             
