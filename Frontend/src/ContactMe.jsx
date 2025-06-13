@@ -60,13 +60,13 @@ export default function Contact(){
             <div className="sm:text-2xl md:text-3xl lg:text-5xl font-light px-5 py-3 bg-[url('/banner.png')] bg-cover bg-no-repeat w-full text-xl">
                 <div>Contact</div>
             </div>
-            <div className="pt-10 sm:pl-10 sm:flex">
+            <div className="pt-10 sm:pl-10 pl-3 sm:flex">
                 <div className="sm:text-2xl md:text-3xl md:font-medium lg:text-5xl">Helpful <br />Information</div>
                 <div className="sm:text-2xl md:text-3xl md:font-medium lg:text-5xl sm:pl-60 pt-3">General <br />Inquiries</div>
                 <div className="text-md sm:pl-52 sm:pt-10 pt-3"> For general inquiries please , please <i><u className="cursor-pointer" onClick={fillform}> <br /> fill out this form to reach me</u> </i>
                 </div> 
             </div>
-            <div className="sm:flex sm:pt-20 pt-4 sm:pl-10 ">
+            <div className="sm:flex pl-3 sm:pt-20 pt-4 sm:pl-10 ">
                 <span className="sm:text-lg md:text-xl lg:text-2xl ">Phone <br />
                 <span className="sm:text-md md:text-lg lg:text-xl cursor-pointer" onClick={() => CopyText('9875142251', true)}>+91 9875142251</span>
                 </span>
@@ -77,7 +77,7 @@ export default function Contact(){
                 <input type="text" ref={lname} className="border-gray-600 border-b-1 pt-1 outline-none"></input>
                 </span>
             </div>
-            <div className="sm:flex pt-10 sm:pl-10">
+            <div className="sm:flex pt-10 sm:pl-10 pl-3">
             <span className="sm:text-lg md:text-xl lg:text-2xl">Email <br />
                 <span className="sm:text-md md:text-lg lg:text-xl cursor-pointer" onClick={() => CopyText('pankeet04@gmail.com' , false)}>pankeet04@gmail.com</span>
                 </span>
@@ -88,7 +88,7 @@ export default function Contact(){
                 <input type="text" ref={sub} className="border-gray-600 overflow-none border-b-1 pt-1 outline-none w-2xs"></input>
                 </span>
             </div>
-            <div className="sm:flex pt-10 sm:pl-10">
+            <div className="sm:flex pt-10 sm:pl-10 pl-3">
                 <span className="sm:text-lg md:text-xl lg:text-2xl">Location <br /> <span className="md:text-xl text-md">Vadodara, Gujarat, India</span></span>
                 <span className="sm:pl-[290px] pt-4 md:text-xl text-lg flex sm:block">Message<span className='text-red-900'>*</span> <br />
                 <input type="text" ref={msg} className="border-gray-600 border-b-1 pt-1 outline-none w-2xl"></input>
