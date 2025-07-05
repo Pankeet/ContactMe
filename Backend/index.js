@@ -7,7 +7,7 @@ import RecruitRouter from './controller/recruiter.js';
 dotenv.config() ;
 
 app.use(express.json()) ;
-app.use(cors({origin : "https://contact-me-flax-nu.vercel.app/"})) ;
+app.use(cors({origin : "*"})) ;
 
 app.use('/api' , RecruitRouter);
 
