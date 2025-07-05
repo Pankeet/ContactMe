@@ -49,7 +49,6 @@ export default function Contact(){
                     setcooling(e => !e);
                     toast.success("Thank You ! Mail Received Successfully");
                     setTimeout(()=> setcooling(e => !e) , 30000);
-
                 }
             }
         }
@@ -61,7 +60,7 @@ export default function Contact(){
     }
     return (
         <div className="font-serif">
-            <div className="text-md sm:text-2xl md:text-3xl lg:text-5xl font-light sm:pl-5 pl-2 py-3 bg-[url('/banner.png')] bg-cover ">
+            <div className="text-md sm:text-2xl md:text-3xl lg:text-5xl font-light sm:pl-5 pl-2 pb-3 pt-1 bg-[url('/banner.png')] bg-cover ">
                 <div>Contact</div>
             </div>
             <div className="pt-10 sm:pl-10 pl-3 sm:flex">

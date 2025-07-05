@@ -2,7 +2,7 @@ import Contact from './ContactMe'
 function App() {
 
   return (
-    < div>
+    < div className="overflow-hidden">
       <Contact />
     </div >
   )
