@@ -7,7 +7,7 @@ import RecruitRouter from './controller/recruiter.js';
 dotenv.config() ;
 
 app.use(express.json()) ;
-app.use(cors()) ;
+app.use(cors({origin : "*"})) ;
 
 app.use('/api' , RecruitRouter);
 
